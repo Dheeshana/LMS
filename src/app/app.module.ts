@@ -8,6 +8,8 @@ import { SharedModule } from './shared/shared.module';
 import { MatButtonModule} from '@angular/material/button';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { PagesModule } from './pages/pages.module';
+import {  MatInputModule } from '@angular/material/input';
+import { DialogsModule } from './dialogs/dialogs.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PagesModule } from './pages/pages.module';
     SharedModule,
     MatButtonModule,
     MatToolbarModule,
-    PagesModule
+    PagesModule,
+    MatInputModule,
+    DialogsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
