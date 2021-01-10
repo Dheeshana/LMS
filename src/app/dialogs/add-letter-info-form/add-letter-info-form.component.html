@@ -1,43 +1,49 @@
-<form>
+<form #letterDet="ngForm">
+    <h3>Enter Letter Details</h3>
     <mat-form-field>
         <mat-label>Letter ID : </mat-label>
-        <input matInput placeholder="L123" required/>
+        <input matInput placeholder="L123" name="letter_ID" #letter_ID="ngModel" required [(ngModel)]="letter.letter_ID"/>
     </mat-form-field>
+    {{letter.letter_ID | json}}
     <br/>
     <mat-form-field>
         <mat-label>Letter Number : </mat-label>
-        <input matInput placeholder="768E" required/>
+        <input matInput placeholder="768E" name="letter_No" #letter_No="ngModel" [(ngModel)]="letter.letter_No" required/>
     </mat-form-field>
     <br/>
     <mat-form-field>
         <mat-label>Title of the letter : </mat-label>
-        <input matInput placeholder="Personal Letter" required/>
+        <input matInput placeholder="Personal Letter" name="letter_title" #letter_title="ngModel" required [(ngModel)]="letter.letter_title"/>
     </mat-form-field>
     <br/>
     <mat-form-field>
         <mat-label>Recieve Date : </mat-label>
-        <input matInput type="date" required/>
+        <input matInput type="date" name="letter_recievedDate" #letter_recievedDate="ngModel" required [(ngModel)]="letter.letter_recievedDate"/>
     </mat-form-field>
     <br/>
     <mat-form-field>
         <mat-label>Assign Date : </mat-label>
-        <input matInput type="date" required/>
+        <input matInput type="date" name="letter_assignedDate" #letter_assignedDate="ngModel" required [(ngModel)]="letter.letter_assignedDate"/>
     </mat-form-field>
     <br/>
     <mat-form-field>
         <mat-label>Assign Unit : </mat-label>
-        <input matInput type="text" required/>
+        <input matInput type="text" name="letter_assignedUnit" #letter_assignedUnit="ngModel" required [(ngModel)]="letter.letter_assignedUnit"/>
     </mat-form-field>
     <br/>
     <mat-form-field>
         <mat-label>Letter Status : </mat-label>
-        <input matInput type="text" required/>
+        <input matInput type="text" name="letter_status" #letter_status="ngModel" required [(ngModel)]="letter.letter_status"/>
     </mat-form-field>
     <br/>
     <mat-form-field>
         <mat-label>Description : </mat-label>
-        <input matInput type="text" required/>
+        <input matInput type="text" name="letter_description" #letter_description="ngModel" required [(ngModel)]="letter.letter_description"/>
     </mat-form-field>
     <br/>
-    <button mat-raised-button color="accent" >SUBMIT</button>
+    <button mat-raised-button color="accent" (click)="onSubmit()" [disabled]="letterDet.invalid">SUBMIT</button>
+    <!--
+    <button mat-raised-button color="accent" (click)="onUpdate()" >update</button>
+    -->
 </form>
+

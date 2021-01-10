@@ -10,6 +10,16 @@ import { MatToolbarModule} from '@angular/material/toolbar';
 import { PagesModule } from './pages/pages.module';
 import {  MatInputModule } from '@angular/material/input';
 import { DialogsModule } from './dialogs/dialogs.module';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+import { AngularFirestoreModule} from '@angular/fire/firestore';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AngularFireModule} from '@angular/fire';
+import { AngularFireDatabaseModule} from '@angular/fire/database';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,7 +35,18 @@ import { DialogsModule } from './dialogs/dialogs.module';
     MatToolbarModule,
     PagesModule,
     MatInputModule,
-    DialogsModule
+    DialogsModule,
+    MatIconModule,
+    MatDialogModule,
+    MatTableModule,
+    MatDatepickerModule,
+    AngularFirestoreModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AngularFireModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase)
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,29 @@
+<h3>Enter User Details to Create an Account</h3>
+<form>
+    <mat-form-field>
+        <mat-label>First Name :</mat-label>
+        <input matInput placeholder="john" name= "fname"required [(ngModel)]="fname"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Last Name :</mat-label>
+        <input matInput placeholder="Doe" name="lname" required [(ngModel)]="lname"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Age :</mat-label>
+        <input type="number" matInput placeholder="24" name="age" required [(ngModel)]="age"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email :</mat-label>
+        <input matInput placeholder="example@gmail.com" name="email" required [(ngModel)]="email"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password :</mat-label>
+        <input type="password" matInput required name="pwd" [(ngModel)]="pwd"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Confirm Password  :</mat-label>
+        <input type="password" matInput required name="cpwd" [(ngModel)]="cpwd"/>
+    </mat-form-field>
+    <br/>
+    <button mat-raised-button color="accent" (click)="onSubmit()">Create Account</button>
+</form>
