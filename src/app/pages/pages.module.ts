@@ -6,6 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule} from '@angular/forms';
+
 
 
 
@@ -19,7 +21,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule,
+    
   ],
   exports:[
     LetterManagerComponent,

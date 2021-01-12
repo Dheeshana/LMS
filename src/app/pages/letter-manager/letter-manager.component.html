@@ -1,87 +1,95 @@
 <div>
     <table>
         <tr>
-            <td>
+           <td>
+               <div style="text-align: center;">
                 <mat-form-field>
-                    <mat-label>Search By letter head</mat-label>
-                    <input type="text" matInput placeholder="personal"/>
-                    <mat-icon matSuffix>search</mat-icon>
-            </mat-form-field>
-            </td>
-            <td>
-                <div>
-                    <button mat-mini-fab color="accent" (click)="openDialog()">+</button>
+                    <mat-label>Search By letter ID</mat-label>
+                    <input type="text" matInput placeholder="personal" name="searchID" [(ngModel)]="searchID"/>      
+                </mat-form-field>
 
-                </div>
+                <button mat-icon-button>
+                    <mat-icon matSuffix (click)="searchInfo()">search</mat-icon>
+                </button>
+
+               </div>
                 
-            </td>
-        </tr>
-        
-    </table>
-    <table >
-        <thead>
-            <th>Letter Id</th>
-            <th>Letter No</th>
-            <th>Letter title</th>
-            <th>Recieve Date</th>
-            <th>Assign Date</th>
-            <th>Assign Unit</th>
-            <th>Status</th>
-            <th>Description</th>
-            <th>Action</th>
-        </thead>
-        <tbody *ngFor="let letter of letters">
-            <td>
-                <div >
-                    {{letter.payload.doc.data().letter_ID}}
-                </div>
-            </td>
-            <td>
-                <div>
-                    {{letter.payload.doc.data().letter_No}}
-                </div>
-            </td>
-            <td>
-                <div>
-                    {{letter.payload.doc.data().letter_title}}
-                </div>
-            </td>
-            <td>
-                <div>
-                    {{letter.payload.doc.data().letter_recievedDate}}
-                </div>
-            </td>
-            <td>
-                <div>
-                    {{letter.payload.doc.data().letter_assignedDate}}
-                </div>
-            </td>
-            <td>
-                <div>
-                    {{letter.payload.doc.data().letter_assignedUnit}}
-                </div>
-            </td>
-            <td>
-                <div>
-                    {{letter.payload.doc.data().letter_status}}
-                </div>
-            </td>
-            <td>
-                <div>
-                    {{letter.payload.doc.data().letter_description}}
-                </div>
-            </td>
-            <td>
-                <div>
-                    <mat-icon matSuffix style="color: #f00;" (click)="delete(letter.payload.doc.data().letter_key)">delete_forever</mat-icon>
-                </div>
-                <div>
-                    <mat-icon matSuffix style="color:cornflowerblue;" >create</mat-icon>
-                </div>
-            </td>
-        </tbody>
-    </table>
 
-    
-    
+                
+
+                <table>
+                    <thead>
+                        <th>Letter Id</th>
+                        <th>Letter No</th>
+                        <th>Letter title</th>
+                        <th>Recieve Date</th>
+                        <th>Assign Date</th>
+                        <th>Assign Unit</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody *ngFor="let letter of letters">
+                        <td>
+                            <div >
+                                {{letter.payload.doc.data().letter_ID}}
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                {{letter.payload.doc.data().letter_No}}
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                {{letter.payload.doc.data().letter_title}}
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                {{letter.payload.doc.data().letter_recievedDate}}
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                {{letter.payload.doc.data().letter_assignedDate}}
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                {{letter.payload.doc.data().letter_assignedUnit}}
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                {{letter.payload.doc.data().letter_status}}
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                {{letter.payload.doc.data().letter_description}}
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <button mat-icon-button>
+                                    <mat-icon matSuffix style="color: #f00;" (click)="delete(letter.payload.doc.data().letter_key)">delete_forever</mat-icon>
+                                </button>
+                            </div>
+                            <div>
+                                <button mat-icon-button>
+                                    <mat-icon matSuffix style="color:cornflowerblue;" (click)="updateClicked(letter.payload.doc.data().letter_key)">create</mat-icon>
+                                </button>
+                            </div>
+                        </td>
+                    </tbody>
+                </table>
+            </td>   
+            <td>
+                <div>
+                    <button mat-mini-fab style="background-color:rgb(27, 153, 211);" (click)="openDialog()">+</button>
+                </div>                
+            </td>               
+        </tr>        
+    </table>   
 </div>

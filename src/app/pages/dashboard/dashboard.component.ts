@@ -9,8 +9,10 @@ import { LoginFormComponent } from 'src/app/dialogs/login-form/login-form.compon
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  panelOpenState = false;
 
   constructor(public dialog : MatDialog) { }
+
 
   openDialog(): void{
     const dialogRef = this.dialog.open(LoginFormComponent, {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { FirebaseService } from 'src/app/firebase.service';
 import { Letter } from 'src/app/models/letter';
@@ -28,7 +29,7 @@ export class AddLetterInfoFormComponent implements OnInit {
   letters : any[] = [];
 
 
-  constructor(private firebaseService : FirebaseService, public db: AngularFirestore) { 
+  constructor(private firebaseService : FirebaseService, public db: AngularFirestore, public dialogRef: MatDialogRef<AddLetterInfoFormComponent>) { 
     //this.getLetters();
     //this.onUpdate();
   }
@@ -54,6 +55,8 @@ export class AddLetterInfoFormComponent implements OnInit {
     this.aUnit = '';
     this.status = '';
     this.description = '';*/
+
+    this.dialogRef.close();
   }
 
   getLetters(){

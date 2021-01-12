@@ -9,12 +9,15 @@ import { FirebaseService } from 'src/app/firebase.service';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
-  fname="";
-  lname="";
-  age="";
-  email="";
-  pwd="";
-  cpwd="";
+  fname : string;
+  lname : string;
+  age : string;
+  email : string;
+  pwd : string;
+  cpwd : string;
+
+  hide =true;
+  chide = true;
 
   user: any[] = [];
 

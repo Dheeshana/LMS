@@ -1,0 +1,45 @@
+<form>
+    <h3>Searched Letter Details</h3>
+    <div>
+  
+            <label>Letter ID : </label>
+            <div>
+                {{data.letterID}}
+            </div>
+        <br/>
+        
+            <label>Letter No : </label>
+            <div>{{data.letterNo}}</div>
+        <br/>
+        
+            <label>Letter Title : </label>
+            <div>{{data.letterTitle}}</div>
+        
+        <br/>
+        
+            <label>Letter Recieve Date : </label>
+            <div>{{data.recievedDate}}</div>
+        
+        <br/>
+        
+            <label>Letter Assign Date : </label>
+            <div>{{data.assignedDate}}</div> 
+        <br/>
+        
+            <label>Letter Assign Unit : </label>
+            <div>{{data.assignedUnit}}</div>
+        
+        <br/>
+        
+            <label>Letter Status : </label>
+            <div>{{data.status}}</div>
+        
+        <br/>
+       
+            <label>Letter Description : </label>
+            <div>{{data.description}}</div>
+        
+        <br/>
+    </div>
+    <button mat-raised-button color="accent" (click)="ok()">OK</button>                           
+</form>

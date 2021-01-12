@@ -13,7 +13,7 @@ export class FirebaseService {
 
   constructor(public db: AngularFirestore, private firestore: AngularFireDatabase) { 
     this.letters = this.firestore.list('newLetters');
-    this.getUpdateData();
+    //this.getUpdateData();
   }
 
   
@@ -67,18 +67,19 @@ export class FirebaseService {
   return this.users;
  }
 
- //getting the data of the dataset we want to update
- getUpdateData(){
-    var user = this.db.collection('newLetter').doc('-MQWeYXZqz9cYFC3PX2_').get();
-   //console.log(this.users);
-   return this.users;
- }
-
 
  //updating a letter
- updateLetters(key : string, value: any[]){
+ updateLetters(key : string, status: string, description: string){
   // let letter_No = value[1]; 
   // this.letters.update(letter_No, value);
+  this.db.collection('newLetters').doc(key).update({
+    letter_status: status,
+    letter_description: description
+  }).then(res => {
+    console.log('Successfully Updated');
+  }).catch(err => {
+    console.log(err);
+  })
  }
 
  //deleting a letter from the database

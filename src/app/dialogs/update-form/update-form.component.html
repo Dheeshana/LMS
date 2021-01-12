@@ -1,0 +1,21 @@
+<form>
+    <h3>Enter Letter Details To Update</h3>
+    <div>
+        <mat-form-field>
+            <mat-label>Letter ID : </mat-label>
+            <input matInput placeholder="Doe" name="letterID" id="letterID" [(ngModel)]="data.letterID" disabled/>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label>Letter Status : </mat-label>
+            <input matInput placeholder="Doe" name="status" id="status" required [(ngModel)]="data.status"/>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label>Letter Description : </mat-label>
+            <input matInput placeholder="Doe" name="description" id="description" required [(ngModel)]="data.description"/>
+        </mat-form-field>
+        <br/>
+    </div>
+    <button mat-raised-button style="background-color:rgb(73, 219, 15);" (click)="update()">Update</button>                           
+</form>

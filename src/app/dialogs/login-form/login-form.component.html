@@ -18,11 +18,17 @@
     </mat-form-field>
     <mat-form-field>
         <mat-label>Password :</mat-label>
-        <input type="password" matInput required name="pwd" [(ngModel)]="pwd"/>
+        <input [type]="hide ? 'password' : 'text'" matInput required name="pwd" [(ngModel)]="pwd"/>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Confirm Password  :</mat-label>
-        <input type="password" matInput required name="cpwd" [(ngModel)]="cpwd"/>
+        <input [type]="chide ? 'password' : 'text'" matInput required name="cpwd" [(ngModel)]="cpwd"/>
+        <button mat-icon-button matSuffix (click)="chide = !chide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{chide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
     </mat-form-field>
     <br/>
     <button mat-raised-button color="accent" (click)="onSubmit()">Create Account</button>

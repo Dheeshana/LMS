@@ -6,13 +6,19 @@ import { MatInputModule } from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule} from '@angular/material/icon';
+import { UpdateFormComponent } from './update-form/update-form.component';
+import { SearchInfoDialogComponent } from './search-info-dialog/search-info-dialog.component';
 
 
 
 @NgModule({
   declarations: [
     AddLetterInfoFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    UpdateFormComponent,
+    SearchInfoDialogComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -21,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule
   ],
   exports: [
     AddLetterInfoFormComponent,
